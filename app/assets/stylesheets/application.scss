@@ -17,3 +17,14 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
  @import "font-awesome";
+ @import "toastr";
+
+ .wrapper-skinny {
+ 	width: 50%;
+ 	margin: 0 auto;
+ }
+
+ .wrapper-wide {
+ 	width: 80%;
+ 	margin: 0 auto;
+ }

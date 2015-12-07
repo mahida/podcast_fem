@@ -20,7 +20,7 @@
           <li><%= link_to "Create a Podcast", new_podcast_registration_path %></li>
 
         <% else %>
-          <li><%= link_to "Dashboard" %></li>
+          <li><%= link_to "Dashboard",root_path %></li>
           <li><%= link_to "Explore" %></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -31,7 +31,7 @@
               <li><%= link_to "New Episode" %></li>
               <li><%= link_to "Edit Episode" %></li>
               <li role="separator" class="divider"></li>
-              <li><a href="#">Account Settings</a></li>
+              <li><%= link_to "Account Settings", edit_podcast_registration_path %></li>
               <li role="separator" class="divider"></li>
               <li><%= link_to "Sign Out", destroy_podcast_session_path, method: :delete %></li>
             </ul>

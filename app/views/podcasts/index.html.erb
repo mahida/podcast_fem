@@ -1,0 +1,19 @@
+<h1>Discover your new favorite podcast</h1>
+
+<div class="row">
+	<% @podcasts.each do |podcast| %>
+
+		<div class="col-md-4">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					
+				</div>
+				<div class="panel-body">
+					<%= link_to podcast.title, podcast %>
+				</div>
+			</div>
+		</div>
+
+	<% end %>
+
+</div>

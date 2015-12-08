@@ -15,13 +15,13 @@
       <ul class="nav navbar-nav navbar-right">
         
         <% if(!podcast_signed_in?) %>
-          <li><%= link_to "Explore" %></li>
+          <li><%= link_to "Explore", podcasts_path %></li>
           <li><%= link_to "Sign In", new_podcast_session_path %></li>
           <li><%= link_to "Create a Podcast", new_podcast_registration_path %></li>
 
         <% else %>
           <li><%= link_to "Dashboard",root_path %></li>
-          <li><%= link_to "Explore" %></li>
+          <li><%= link_to "Explore", podcasts_path %></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
               <%= current_podcast.email %> <span class="caret"></span>

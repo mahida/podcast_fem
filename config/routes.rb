@@ -2,6 +2,9 @@ Rails.application.routes.draw do
 
   devise_for :podcasts
   root 'welcome#index'
+
+  resources :podcasts, only: [:index, :show]
+
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

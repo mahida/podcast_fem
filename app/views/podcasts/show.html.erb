@@ -1,0 +1,20 @@
+<div class="well">
+	<h3><%= @podcast.title %></h3>
+	<p><%= @podcast.description %></p>
+	<ul>
+		<% unless @podcast.itunes.blank? %>
+			<li><%= link_to @podcast.itunes %></li>
+		<% end %>
+		<% unless @podcast.stitcher.blank? %>
+			<li><%= link_to @podcast.stitcher %></li>
+		<% end %>
+		<% unless @podcast.podbay.blank? %>
+			<li><%= link_to @podcast.podbay %></li>
+		<% end %>
+	</ul>
+</div>
+
+<div>
+<%= link_to "All Podcasts", podcasts_path %> /
+<%= @podcast.title %>
+</div>

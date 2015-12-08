@@ -19,6 +19,66 @@
  @import "font-awesome";
  @import "toastr";
 
+$white: #ffffff;
+$dark: #22292e;
+$highlight: #d2674e;
+
+ body {
+ 	background-image: image-url("purple-beach.jpg")
+ }
+
+ h1 {
+ 	color: $dark;
+ 	font-size: 4.2rem;
+ 	font-weight: 300px;
+ 	letter-spacing: 1px;
+ 	margin: 7rem 0 2rem 0;
+ }
+
+.btn-primary.btn {
+	border: 1px solid $highlight;
+	border-radius: 9px;
+	font-weight: 300px;
+	background-color: $highlight;
+	color: #fff;
+	padding: 10px 25px 10px 25px;
+}
+
+.btn-primary.btn:hover, .btn-primary.btn:focus {
+	border-color: #ff7e82;
+	border-bottom-color: $highlight;
+	background-color: #ff7e82;
+	outline:none;
+}
+
+.btn-primary.btn:active {
+	border-color: #e00007;
+	background-color: #e00007;
+	outline:none;
+}
+
+.btn-default.btn {
+	border: 1px solid $white;
+	border-radius: 9px;
+	font-weight: 300px;
+	padding: 10px 25px 10px 25px;
+	margin-left: 25px;
+	background-color: $white;
+}
+
+.btn-default.btn:hover, .btn-default.btn:focus {
+	border-color: #E8E8E8;
+	border-bottom-color: $white;
+	background-color: #D8D8D8;
+	outline:none;
+}
+
+.btn-default.btn:active {
+	border-color: #e00007;
+	background-color: #e00007;
+	outline:none;
+}
+
  .wrapper-skinny {
  	width: 50%;
  	margin: 0 auto;

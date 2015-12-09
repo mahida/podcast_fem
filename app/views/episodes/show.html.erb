@@ -1,4 +1,5 @@
-<div class="well">
+<%= image_tag @episode.thumbnail.url(:medium) %>
+<div class="well">	
 	<h3><%= @episode.title %></h3><br />
 	<p><%= @episode.description %></p>
 </div>
@@ -12,8 +13,8 @@
 	<% @episodes.each do |episode| %>
 		<div class="col-md-4">
 			<div class="panel panel-default">
-				<div class="panel-heading">
-					
+				<div class="panel-heading preview">
+					<%= image_tag episode.thumbnail.url(:medium) %>
 				</div>
 				<div class="panel-body">
 					<%= link_to episode.title, podcast_episode_path(@podcast, episode) %>

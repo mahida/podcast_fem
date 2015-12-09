@@ -1,0 +1,15 @@
+<%= form_for ([@podcast, @episode]) do |f| %>
+
+	<div class="form-group">
+		<%= f.text_field :title, placeholder: "Title", class: "form-control" %>
+	</div>
+
+	<div class="form-group">
+		<%= f.text_area :description, rows: 5, cols: 15, placeholder: "Tell us about this episode", class: "form-control" %>
+	</div>
+
+	<div class="actions">
+    <%= f.submit "Save Episode", class: "btn btn-primary" %>
+  </div>
+
+<% end %>

@@ -18,3 +18,10 @@
 <%= link_to "All Podcasts", podcasts_path %> /
 <%= @podcast.title %>
 </div>
+
+<% @episodes.each do |episode| %>
+<div class="well">
+	<h2><%= link_to episode.title, podcast_episode_path(@podcast, episode) %></h2>
+	<p><%= episode.description[0..250] %>...</p>
+</div>
+<% end %> 

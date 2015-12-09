@@ -1,0 +1,27 @@
+<div class="well">
+	<h3><%= @episode.title %></h3><br />
+	<p><%= @episode.description %></p>
+</div>
+<div>
+	<%= link_to "All Podcasts", podcasts_path %> /
+	<%= link_to @podcast.title, podcast_path(@podcast) %> /
+	<%= @episode.title %>
+</div>
+
+<div class="row">
+	<% @episodes.each do |episode| %>
+		<div class="col-md-4">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					
+				</div>
+				<div class="panel-body">
+					<%= link_to episode.title, podcast_episode_path(@podcast, episode) %>
+				</div>
+			</div>
+		</div>
+	<% end %>
+</div>
+
+
+

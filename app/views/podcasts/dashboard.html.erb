@@ -1,0 +1,21 @@
+<div class="row">
+	<div class="well dash-links">
+		<ul>
+			<li><%= link_to "Episodes", root_path %></li>
+			<li><%= link_to "New Episode", new_podcast_episode_path(@podcast) %></li>
+			<li><%= link_to "View Podcast", podcast_path(current_podcast) %></li>
+		</ul>
+	</div>
+<div>
+
+<% @episodes.each do |episode| %>
+	<div class="well">
+		<h2><%= link_to episode.title, podcast_episode_path(@podcast, episode) %></h2>
+		<p><%= episode.description[0..250] %>...</p>
+		<p>
+			<%= link_to "Edit", edit_podcast_episode_path(@podcast, episode) %>
+			<%= link_to "Delete", podcast_episode_path(@podcast, episode), method: :delete, data: {confirm: "Are you sure?"} %>
+		</p>
+
+	</div>
+<% end %>

@@ -1,19 +1,26 @@
-<h1>Discover your new favorite podcast</h1>
+<div class="jumbotron">
+	<h1>Discover your new favorite podcast...</h1>
+</div>
 
-<div class="row">
-	<% @podcasts.each do |podcast| %>
+<div class="container">
 
-		<div class="col-md-4">
-			<div class="panel panel-default">
-				<div class="panel-heading preview">
-					<%= image_tag podcast.thumbnail.url(:medium) %>
-				</div>
-				<div class="panel-body">
-					<%= link_to podcast.title, podcast %>
+	<div class="row row-space-2">
+		<% @podcasts.each do |podcast| %>
+
+			<div class="col-md-4">
+				<div class="panel panel-default">
+					<div class="panel-heading preview">
+						<%= image_tag podcast.thumbnail.url(:medium) %>
+					</div>
+					<div class="panel-body">
+						<%= link_to podcast.title, podcast %><br />
+						<%= podcast.episodes.count %> Episodes
+					</div>
 				</div>
 			</div>
-		</div>
 
-	<% end %>
+		<% end %>
+
+	</div>
 
 </div>

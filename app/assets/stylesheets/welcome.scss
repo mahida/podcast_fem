@@ -1,0 +1,10 @@
+$white: #ffffff;
+
+body.home-page {
+	background-image: image-url("nite_sky.jpg");
+	h1{
+		color: $white;
+		padding-bottom: 20px;
+		padding-top: 25px;
+	}
+}

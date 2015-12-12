@@ -4,6 +4,7 @@ class PodcastsController < ApplicationController
 
 	def index
 		@podcasts = Podcast.all.order("created_at desc")
+		@episodes = Episode.where(podcast_id: @podcast)
 	end
 
 	def show

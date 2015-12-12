@@ -1,3 +1,7 @@
+<div class="jumbotron text-center">
+	<h1><%= @podcast.title %> Dashboard</h1>
+</div>
+
 <div class="row">
 	<div class="well dash-links">
 		<ul>
@@ -8,14 +12,22 @@
 	</div>
 <div>
 
-<% @episodes.each do |episode| %>
-	<div class="well">
-		<h2><%= link_to episode.title, podcast_episode_path(@podcast, episode) %></h2>
-		<p><%= episode.description[0..250] %>...</p>
-		<p>
-			<%= link_to "Edit", edit_podcast_episode_path(@podcast, episode) %>
-			<%= link_to "Delete", podcast_episode_path(@podcast, episode), method: :delete, data: {confirm: "Are you sure?"} %>
-		</p>
-
-	</div>
-<% end %>
+<div class="row">
+	<% @episodes.each do |episode| %>
+		<div class="container">
+			<div class="col-md-4">
+				<%=image_tag episode.thumbnail.url(:medium) %>
+			</div>
+			<div class="col-md-8">
+				<div class="well">
+					<h2><%= link_to episode.title, podcast_episode_path(@podcast, episode) %></h2>
+					<p><%= episode.description[0..250] %>...</p>
+					<p>
+						<%= link_to "Edit", edit_podcast_episode_path(@podcast, episode) %>
+						<%= link_to "Delete", podcast_episode_path(@podcast, episode), method: :delete, data: {confirm: "Are you sure?"} %>
+					</p>
+				</div>
+			</div>
+		</div>
+	<% end %>
+</div>

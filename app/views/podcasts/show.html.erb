@@ -1,27 +1,40 @@
-<div class="well">
-	<h3><%= @podcast.title %></h3>
-	<p><%= @podcast.description %></p>
+<div class="jumbotron text-center">
+	<p><%= image_tag @podcast.thumbnail.url, class: "img-circle thumbnail-medium" %><p>
+	<h3><%= @podcast.title %> Podcast</h3>
+	<p><%= @podcast.description[0..650] %></p>
 	<ul>
 		<% unless @podcast.itunes.blank? %>
-			<li><%= link_to @podcast.itunes %></li>
+			<li><%= link_to "iTunes", @podcast.itunes, class: "btn btn-primary" %></li>
 		<% end %>
 		<% unless @podcast.stitcher.blank? %>
-			<li><%= link_to @podcast.stitcher %></li>
+			<li><%= link_to "Stitcher", @podcast.stitcher, class: "btn btn-primary" %></li>
 		<% end %>
 		<% unless @podcast.podbay.blank? %>
-			<li><%= link_to @podcast.podbay %></li>
+			<li><%= link_to "Podbay", @podcast.podbay, class: "btn btn-primary" %></li>
 		<% end %>
 	</ul>
 </div>
 
-<div>
+<div class="midbar">
 <%= link_to "All Podcasts", podcasts_path %> /
 <%= @podcast.title %>
 </div>
 
-<% @episodes.each do |episode| %>
-<div class="well">
-	<h2><%= link_to episode.title, podcast_episode_path(@podcast, episode) %></h2>
-	<p><%= episode.description[0..250] %>...</p>
-</div>
-<% end %> 
+
+	<div class="row">
+		<% @episodes.each do |episode| %>
+			<div class="container">
+				<div class="col-md-4">
+					<%= image_tag episode.thumbnail.url(:medium) %>
+				</div>
+				<div class="col-md-8">
+					<div class="well">
+						<h2><%= link_to episode.title, podcast_episode_path(@podcast, episode) %></h2>
+						<p><%= episode.description[0..250] %>...</p>
+					</div>
+				</div>
+			</div>
+		<% end %>
+	</div>
+
+

@@ -1,27 +1,39 @@
-<%= image_tag @episode.thumbnail.url(:medium) %>
-<div class="well">	
-	<h3><%= @episode.title %></h3><br />
-	<p><%= @episode.description %></p>
-</div>
-<div>
-	<%= link_to "All Podcasts", podcasts_path %> /
-	<%= link_to @podcast.title, podcast_path(@podcast) %> /
-	<%= @episode.title %>
-</div>
-
 <div class="row">
-	<% @episodes.each do |episode| %>
+	<div class="col-md-12 epi-show">
 		<div class="col-md-4">
-			<div class="panel panel-default">
-				<div class="panel-heading preview">
-					<%= image_tag episode.thumbnail.url(:medium) %>
-				</div>
-				<div class="panel-body">
-					<%= link_to episode.title, podcast_episode_path(@podcast, episode) %>
-				</div>
-			</div>
+			<p><%= image_tag @episode.thumbnail.url, class: "thumbnail-full" %></p>
 		</div>
-	<% end %>
+		<div class="col-md-8">	
+			<h3><%= @episode.title %></h3><br />
+			<p><%= @episode.description %></p>
+		</div>
+	</div>
+
+	<div class="col-md-12 midbar">
+		<ul>
+			<li><%= link_to "All Podcasts", podcasts_path %></li> /
+			<li><%= link_to @podcast.title, podcast_path(@podcast) %></li> /
+			<li><%= @episode.title %></li>
+		</ul>
+	</div>
+	
+	<div class="container">
+		<div class="row">
+			<% @episodes.each do |episode| %>
+				<div class="col-md-4">
+					<div class="panel panel-default">
+						<div class="panel-heading preview">
+							<%= image_tag episode.thumbnail.url(:medium) %>
+						</div>
+						<div class="panel-body">
+							<%= link_to episode.title, podcast_episode_path(@podcast, episode) %>
+						</div>
+					</div>
+				</div>
+			<% end %>
+		</div>
+	</div>
+
 </div>
 
 

@@ -206,7 +206,7 @@ h1 {
 }
 
 .jp-jplayer,.jp-audio {
-	width: 70%;
+	width: 80%;
 	margin: 3rem auto .5rem auto;
 }
 
@@ -269,16 +269,17 @@ h1 {
 	display: inline-block;
 	line-height: 46px;
 }
-
 .jp-mute {
 	text-align: left;
 }
+
 .jp-time-holder {
 	color: #fff;
 	font-size: 12px;
 	line-height: 14px;
 	position: absolute;
 	top: 14px;
+	right: 90px;
 }
 
 .jp-progress {

@@ -13,8 +13,8 @@
 						<%= image_tag podcast.thumbnail.url(:medium) %>
 					</div>
 					<div class="panel-body">
-						<%= link_to podcast.title, podcast %><br />
-						<%= podcast.episodes.count %> Episodes
+						<%= link_to podcast.title, podcast, class: "link-to-text" %><br />
+						<span class="count-text"><%= podcast.episodes.count %> Episodes</span>
 					</div>
 				</div>
 			</div>

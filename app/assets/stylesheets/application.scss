@@ -35,12 +35,11 @@ h1 {
 
 .jumbotron {
 	background-color: $dark;
-	height: 300px;
+	height: 320px;
 	border-radius: 0 !important;
 	margin-top: -20px;
 	margin-right: -20px;
 	margin-left: -20px;
-	margin-bottom: 0;
 	h1 {
 		font-size: 4.2rem;
 		color: $white;
@@ -62,16 +61,14 @@ h1 {
 	}
 }
 
-.thumbnail-small {
-	width: 30px;
-}
 
-.thumbnail-medium {
+.thumbnail-xsmall {
 	width: 54px;
 }
 
-.thumbnail-large {
-	width: 140px;
+.thumbnail-small {
+	width: 120px;
+	height: 120px;
 }
 
 .thumbnail-full {
@@ -129,23 +126,12 @@ h1 {
 	letter-spacing: 0.04em;
 }
 
-.dash-links {
-	ul {
-		list-style: none;
-		margin: 0;
-		li {
-			display: inline;
-			margin-right: 2.5rem;
-		}
-	}
-}
-
 .midbar {
 	position: relative;
 	margin-right: -15px;
 	margin-left: -15px;
-	margin-top: 15px;
-	margin-bottom: 15px;
+	margin-top: 5px;
+	margin-bottom: 30px;
 	text-align: center;
 	ul {
 		list-style: none;
@@ -153,6 +139,9 @@ h1 {
 		li {
 			display: inline;
 			margin-right: 1rem;
+			a {
+				text-decoration: none;
+			}
 		}
 	}
 }
@@ -167,15 +156,22 @@ h1 {
 	margin: 0 auto;
 }
 
-.well {
-	padding: 64px;
-	background-color: $white;
+.show-content {
+	.show-img {
+		margin-left: 80px;
+		margin-top: 40px;
+	}
+	.text-content {
+		padding: 1em 1em;
+		border-bottom: 1px solid $dark;
+	}
 }
 
 .epi-show {
 	background-color: $dark;
 	color: $white;
 	margin-top: -20px;
+	padding-right: 20px;
 	p {
 		padding-top: 16px;
 		padding-bottom: 8px;
@@ -188,6 +184,19 @@ h1 {
 .panel-heading.preview img {
 	width: 100%;
 	height: 250px;
+}
+
+a.link-to-text {
+	text-decoration: none;
+	color: $dark;
+	font-weight: bold;
+}
+a.link-to-text:hover {
+	color: $highlight;
+}
+.count-text {
+	color: grey;
+	font-size: 12px;
 }
 
 .row-space-1 {
@@ -246,8 +255,7 @@ h1 {
 	color: #fff;
 	text-decoration: none;
 }
-
-.jp-play, .jp-pause  {
+.jp-play, .jp-pause {
 	width: 60px;
 	height: 40px;
 	display: inline-block;

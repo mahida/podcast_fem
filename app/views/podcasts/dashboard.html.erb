@@ -3,23 +3,24 @@
 </div>
 
 <div class="row">
-	<div class="well dash-links">
+	<div class="col-md-12 midbar">
 		<ul>
 			<li><%= link_to "Episodes", root_path %></li>
 			<li><%= link_to "New Episode", new_podcast_episode_path(@podcast) %></li>
 			<li><%= link_to "View Podcast", podcast_path(current_podcast) %></li>
 		</ul>
 	</div>
-<div>
+</div>
 
 <div class="row">
+
 	<% @episodes.each do |episode| %>
-		<div class="container">
+		<div class="wrapper-wide show-content">
 			<div class="col-md-4">
-				<%=image_tag episode.thumbnail.url(:medium) %>
+				<%= image_tag episode.thumbnail.url(:thumb), class: "show-img" %>
 			</div>
 			<div class="col-md-8">
-				<div class="well">
+				<div class="text-content">
 					<h2><%= link_to episode.title, podcast_episode_path(@podcast, episode) %></h2>
 					<p><%= episode.description[0..250] %>...</p>
 					<p>

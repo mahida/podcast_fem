@@ -1,7 +1,7 @@
 <div class="jumbotron text-center">
-	<p><%= image_tag @podcast.thumbnail.url, class: "img-circle thumbnail-medium" %><p>
+	<p><%= image_tag @podcast.thumbnail.url, class: "img-circle thumbnail-xsmall" %><p>
 	<h3><%= @podcast.title %> Podcast</h3>
-	<p><%= @podcast.description[0..650] %></p>
+	<p><%= @podcast.description[0..700] %></p>
 	<ul>
 		<% unless @podcast.itunes.blank? %>
 			<li><%= link_to "iTunes", @podcast.itunes, class: "btn btn-primary" %></li>
@@ -16,19 +16,20 @@
 </div>
 
 <div class="midbar">
-<%= link_to "All Podcasts", podcasts_path %> /
-<%= @podcast.title %>
+	<%= link_to "All Podcasts", podcasts_path %> /
+	<%= @podcast.title %>
 </div>
 
 
-	<div class="row">
+	<div class="container">
+
 		<% @episodes.each do |episode| %>
-			<div class="container">
+			<div class="row show-content">
 				<div class="col-md-4">
-					<%= image_tag episode.thumbnail.url(:medium) %>
+					<%= image_tag episode.thumbnail.url, class: "thumbnail-small show-img" %>
 				</div>
 				<div class="col-md-8">
-					<div class="well">
+					<div class="text-content">
 						<h2><%= link_to episode.title, podcast_episode_path(@podcast, episode) %></h2>
 						<p><%= episode.description[0..250] %>...</p>
 					</div>

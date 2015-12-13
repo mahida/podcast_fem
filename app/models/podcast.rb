@@ -5,6 +5,8 @@ class Podcast < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   validates :title, presence: true, length: {maximum: 100}
+  validates :description, presence: true, length: {maximum: 700}
+  validates :thumbnail, presence: true
 
   has_many :episodes
 

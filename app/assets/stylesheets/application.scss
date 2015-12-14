@@ -66,9 +66,19 @@ h1 {
 	width: 54px;
 }
 
+.thumbnail-small-sm {
+	width: 90px;
+	height: 90px;
+}
+
 .thumbnail-small {
-	width: 120px;
-	height: 120px;
+	width: 100px;
+	height: 100px;
+}
+
+.thumbnail-medium {
+	width: 200px;
+	height: 200px;
 }
 
 .thumbnail-full {
@@ -156,15 +166,53 @@ h1 {
 	margin: 0 auto;
 }
 
-.show-content {
-	.show-img {
-		margin-left: 80px;
+.dash-content {
+	border-bottom: 1px solid grey;
+	.dash-img {
+		margin-left: 40px;
 		margin-top: 40px;
 	}
-	.text-content {
+	.dash-text-content {
 		padding: 1em 1em;
-		border-bottom: 1px solid $dark;
+		a.link-text-content {
+			text-decoration: none;
+			color: #45d5ff;
+			}
+		a.link-text-content:hover {
+				color: $highlight
+			}
+		}
+	ul {
+		list-style: none;
+		margin-top: 50px;
+		li {
+			margin-right: 1rem;
+			margin-bottom: 8px;
+			a {
+				text-decoration: none;
+			}
+		}
 	}
+}
+
+.show-content {
+	padding: 12px;
+	border: 1px solid grey;
+	border-radius: 6px;
+	margin-bottom: 5px;
+	background-color: lightgrey;
+	.show-img {
+	}
+	.text-content {
+		padding: 0 1.5em;
+		a.link-text-content {
+			text-decoration: none;
+			color: #45d5ff;
+			}
+		a.link-text-content:hover {
+				color: $highlight
+			}
+		}
 }
 
 .epi-show {

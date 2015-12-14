@@ -10,25 +10,28 @@
 			<li><%= link_to "View Podcast", podcast_path(current_podcast) %></li>
 		</ul>
 	</div>
-</div>
 
-<div class="row">
-
-	<% @episodes.each do |episode| %>
-		<div class="wrapper-wide show-content">
-			<div class="col-md-4">
-				<%= image_tag episode.thumbnail.url(:thumb), class: "show-img" %>
-			</div>
-			<div class="col-md-8">
-				<div class="text-content">
-					<h2><%= link_to episode.title, podcast_episode_path(@podcast, episode) %></h2>
-					<p><%= episode.description[0..250] %>...</p>
-					<p>
-						<%= link_to "Edit", edit_podcast_episode_path(@podcast, episode) %>
-						<%= link_to "Delete", podcast_episode_path(@podcast, episode), method: :delete, data: {confirm: "Are you sure?"} %>
-					</p>
+	<div class="wrapper-wide">
+		<% @episodes.each do |episode| %>
+			<div class="row dash-content">
+				<div class="col-md-2">
+					<%= image_tag episode.thumbnail.url, class: " thumbnail-small-sm dash-img" %>
+				</div>
+				<div class="col-md-8">
+					<div class="dash-text-content">
+						<h2><%= link_to episode.title, podcast_episode_path(@podcast, episode), class: "link-text-content" %></h2>
+						<p>posted <%= episode.created_at.strftime("%B %d, %Y") %></p>
+						<p><%= episode.description[0..250] %>...</p>
+					</div>
+				</div>
+				<div class="col-md-2">
+					<ul>
+						<li><%= link_to "Edit", edit_podcast_episode_path(@podcast, episode), class: "btn btn-success" %></li>
+						<li><%= link_to "Delete", podcast_episode_path(@podcast, episode), class: "btn btn-warning", method: :delete, data: {confirm: "Are you sure?"} %></li>
+					</ul>
 				</div>
 			</div>
-		</div>
-	<% end %>
+		<% end %>
+	</div>
+	
 </div>

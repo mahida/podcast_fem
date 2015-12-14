@@ -21,17 +21,17 @@
 </div>
 
 
-	<div class="container">
-
+	<div class="wrapper-skinny">
 		<% @episodes.each do |episode| %>
 			<div class="row show-content">
 				<div class="col-md-4">
-					<%= image_tag episode.thumbnail.url, class: "thumbnail-small show-img" %>
+					<%= image_tag episode.thumbnail.url, class: "thumbnail-medium show-img" %>
 				</div>
 				<div class="col-md-8">
 					<div class="text-content">
-						<h2><%= link_to episode.title, podcast_episode_path(@podcast, episode) %></h2>
-						<p><%= episode.description[0..250] %>...</p>
+						<h2><%= link_to episode.title, podcast_episode_path(@podcast, episode), class: "link-text-content" %></h2>
+						<p>posted on <%= episode.created_at.strftime("%B %d, %Y") %></p>
+						<p><%= episode.description[0..150] %>...</p>
 					</div>
 				</div>
 			</div>
